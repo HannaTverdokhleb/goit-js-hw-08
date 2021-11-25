@@ -3,14 +3,14 @@
   "version": "1.1.0",
   "description": "",
   "main": "index.js",
-  "homepage": "https://github.com/HannaTverdokhleb/goit-js-hw-08/src/",
+  "homepage": "https://HannaTverdokhleb.gothub.io/goit-js-hw-08/",
   "scripts": {
     "dev": "parcel src/*.html",
     "build": "parcel build src/*.html --public-url /parcel-project-template/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/HannaTverdokhleb/goit-js-hw-08.git" 
+    "url": "git+https://HannaTverdokhleb.gothub.io/goit-js-hw-08/.git" 
   },
   "keywords": [],
   "author": "Alexander Repeta <alexander.repeta@gmail.com>",
