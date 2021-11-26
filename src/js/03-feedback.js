@@ -11,7 +11,7 @@ form.addEventListener('submit', removeValues);
 document.addEventListener('DOMContentLoaded', () => {
   let fields = JSON.parse(localStorage.getItem('feedback-form-state'));
 
-  if (fields) {
+  if (fields)  {
     email.value = fields.email;
     message.value = fields.message;
   } else {
@@ -28,9 +28,35 @@ function updateValue(e) {
 
 function removeValues(event) {
   event.preventDefault();
+  if (!ValidateEmail(email) || email.value.length === 0) {
+    email.classList.add('error');
+    return;
+  }
+  if (message.value.length === 0) {
+    message.classList.add('error');
+    return;
+  }
   let fields = JSON.parse(localStorage.getItem('feedback-form-state'));
   console.log(fields);
+  email.classList.remove('error');
+  message.classList.remove('error');
   email.value = '';
   message.value = '';
   localStorage.removeItem('feedback-form-state');
+}
+
+function ValidateEmail(input) {
+
+  var validRegex = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
+
+  if (input.value.match(validRegex)) {
+
+    return true;
+
+  } else {
+
+    return false;
+
+  }
+
 }
