@@ -21,10 +21,7 @@ function renderGalleryItems(item) {
 
 const links = document.querySelectorAll('.gallery__item');
 
-links.forEach(item => {
-  let lightbox = new SimpleLightbox(item, {
-    captionsData: 'alt',
-    captionDelay: 250,
-  });
-  console.log(item.firstElementChild.getAttribute('alt'));
+let lightbox = new SimpleLightbox(links, {
+  captionsData: 'alt',
+  captionDelay: 250,
 });
